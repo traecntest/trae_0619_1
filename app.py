@@ -106,53 +106,53 @@ def sidebar():
             st.markdown("### 功能导航")
 
             if st.button("🏠 首页", use_container_width=True,
-                         type=(st.session_state.current_page == 'home')):
+                         type="primary" if st.session_state.current_page == 'home' else "secondary"):
                 st.session_state.current_page = 'home'
                 st.rerun()
 
             if st.button("📊 数据接入", use_container_width=True,
-                         type=(st.session_state.current_page == 'data')):
+                         type="primary" if st.session_state.current_page == 'data' else "secondary"):
                 st.session_state.current_page = 'data'
                 st.rerun()
 
             st.markdown("#### 审计模块")
 
             if st.button("🛒 采购审计", use_container_width=True,
-                         type=(st.session_state.current_page == 'procurement')):
+                         type="primary" if st.session_state.current_page == 'procurement' else "secondary"):
                 st.session_state.current_page = 'procurement'
                 st.rerun()
 
             if st.button("💰 销售审计", use_container_width=True,
-                         type=(st.session_state.current_page == 'sales')):
+                         type="primary" if st.session_state.current_page == 'sales' else "secondary"):
                 st.session_state.current_page = 'sales'
                 st.rerun()
 
             if st.button("🏭 生产审计", use_container_width=True,
-                         type=(st.session_state.current_page == 'production')):
+                         type="primary" if st.session_state.current_page == 'production' else "secondary"):
                 st.session_state.current_page = 'production'
                 st.rerun()
 
             if st.button("🔧 维修审计", use_container_width=True,
-                         type=(st.session_state.current_page == 'maintenance')):
+                         type="primary" if st.session_state.current_page == 'maintenance' else "secondary"):
                 st.session_state.current_page = 'maintenance'
                 st.rerun()
 
             st.markdown("#### 工具")
 
             if st.button("🎲 抽样工具", use_container_width=True,
-                         type=(st.session_state.current_page == 'sampling')):
+                         type="primary" if st.session_state.current_page == 'sampling' else "secondary"):
                 st.session_state.current_page = 'sampling'
                 st.rerun()
 
             if st.session_state.user_role == 'admin':
                 st.markdown("#### 系统管理")
                 if st.button("👥 用户管理", use_container_width=True,
-                             type=(st.session_state.current_page == 'users')):
+                             type="primary" if st.session_state.current_page == 'users' else "secondary"):
                     st.session_state.current_page = 'users'
                     st.rerun()
 
                 if st.button("📋 操作日志", use_container_width=True,
-                             type=(st.session_state.current_page == 'logs')):
+                             type="primary" if st.session_state.current_page == 'logs' else "secondary"):
                     st.session_state.current_page = 'logs'
                     st.rerun()
 
