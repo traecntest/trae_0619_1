@@ -239,6 +239,10 @@ def home_page():
         - 系统抽样
         - 货币单位抽样(PPS)
         """)
+        if st.button("🎲 进入抽样工具", use_container_width=True,
+                     key="goto_sampling"):
+            st.session_state.current_page = 'sampling'
+            st.rerun()
 
     with col2:
         st.info("""
@@ -248,6 +252,10 @@ def home_page():
         - 异常波动检测
         - 移动平均
         """)
+        if st.button("📈 上传数据分析", use_container_width=True,
+                     key="goto_data_trend"):
+            st.session_state.current_page = 'data'
+            st.rerun()
 
     with col3:
         st.info("""
@@ -257,6 +265,10 @@ def home_page():
         - 本福特定律
         - 整数金额检测
         """)
+        if st.button("⚠️ 上传数据分析", use_container_width=True,
+                     key="goto_data_anomaly"):
+            st.session_state.current_page = 'data'
+            st.rerun()
 
     st.markdown("---")
     st.caption(f"© 2024 内控风险分析系统 v{APP_VERSION}")
@@ -1040,14 +1052,18 @@ def users_page():
         new_password = st.text_input("初始密码", type="password")
 
     if st.button("添加用户", type="primary"):
-        if new_username and new_password:
+        if not new_username and not new_password:
+            st.warning("请填写用户名和密码")
+        elif not new_username:
+            st.warning("请输入用户名")
+        elif not new_password:
+            st.warning("请输入密码")
+        else:
             if auth_manager.add_user(new_username, new_password, new_role, new_fullname):
                 st.success(f"用户 {new_username} 添加成功")
                 st.rerun()
             else:
                 st.error("添加失败，用户名可能已存在")
-        else:
-            st.warning("请填写用户名和密码")
 
 
 def logs_page():
