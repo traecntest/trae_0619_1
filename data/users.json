@@ -1,0 +1,26 @@
+{
+  "admin": {
+    "username": "admin",
+    "password_hash": "$2b$12$la7mbpi4OIly41rI4LwlFOOSxFP1w/MZVGlNWJJ35YcCUPZPTrME.",
+    "role": "admin",
+    "full_name": "系统管理员",
+    "created_at": "2026-06-19 06:53:01",
+    "last_login": "2026-06-19 07:28:07"
+  },
+  "auditor": {
+    "username": "auditor",
+    "password_hash": "$2b$12$zBSJAIfiQlCsxg522eDQ1.bQEasAp1l5bCnnPncHBH1NHVu2DF5um",
+    "role": "auditor",
+    "full_name": "审计人员",
+    "created_at": "2026-06-19 06:53:02",
+    "last_login": "2026-06-19 06:54:07"
+  },
+  "viewer": {
+    "username": "viewer",
+    "password_hash": "$2b$12$0o7fCnkwuAyEPEdUxCCOQ.L6aF7QEwnMQ9JFAiHM3yadH7yN/0uQi",
+    "role": "viewer",
+    "full_name": "只读用户",
+    "created_at": "2026-06-19 06:53:02",
+    "last_login": "2026-06-19 06:54:07"
+  }
+}
