@@ -936,7 +936,11 @@ def sampling_page():
     elif st.session_state.uploaded_data is not None:
         df = st.session_state.uploaded_data
     else:
-        st.info("请先上传数据或加载示例数据后再使用抽样功能")
+        st.warning("暂无数据，请先上传数据或加载示例数据后再使用抽样功能")
+        if st.button("📊 前往数据接入", type="primary", use_container_width=True,
+                     key="sampling_goto_data"):
+            st.session_state.current_page = 'data'
+            st.rerun()
         return
 
     st.info(f"当前数据：{len(df)} 行，{len(df.columns)} 列")
@@ -1063,7 +1067,7 @@ def users_page():
                 st.success(f"用户 {new_username} 添加成功")
                 st.rerun()
             else:
-                st.error("添加失败，用户名可能已存在")
+                st.error("添加失败，该用户名已存在")
 
 
 def logs_page():
